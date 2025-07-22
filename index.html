@@ -1,13 +1,24 @@
-3D-P/
-├──         #
-├── css/
-│   └── styles.css    # استایل‌های CSS
-├── js/
-│   ├── main.js       # منطق اصلی برنامه (JavaScript)
-│   ├── three.min.js  # کتابخانه Three.js برای رندر سه‌بعدی
-│   └── stl-loader.js # لودر برای فایل‌های STL (اختیاری، اگر بخواهید اضافه کنید)
-├── assets/
-│   └── uploads/      # پوشه برای ذخیره فایل‌های آپلود شده (تصاویر)
-├── .gitignore        # فایل نادیده‌گرفته‌شده‌ها (از قبل با Node تنظیم شده)
-├── README.md         # توضیحات پروژه (از قبل ایجاد شده)
-└── package.json      # فایل تنظیمات Node.js (در صورت استفاده از Node)
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پرینتر دیجیتال سه‌بعدی</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>پرینتر دیجیتال سه‌بعدی</h1>
+        <div class="controls">
+            <input type="file" id="imageUpload" accept="image/*" />
+            <input type="color" id="colorPicker" value="#ff0000" />
+            <textarea id="codeInput" placeholder="کدنویسی مدل (JSON یا JavaScript)"></textarea>
+            <button onclick="generateModel()">ایجاد مدل</button>
+            <button onclick="exportModel()">خروجی STL</button>
+        </div>
+        <div id="3dCanvas"></div>
+    </div>
+    <script src="js/three.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
